@@ -1,0 +1,22 @@
+[
+  {
+    "agent": "LinearQ",
+    "per_step_us": 36.68671927999867,
+    "n_trials": 50000
+  },
+  {
+    "agent": "DQN",
+    "per_step_us": 11.470848259998549,
+    "n_trials": 50000
+  },
+  {
+    "agent": "Threshold",
+    "per_step_us": 2.0624188600004345,
+    "n_trials": 50000
+  },
+  {
+    "agent": "ARIMA",
+    "per_step_us": 65.93575456000053,
+    "n_trials": 50000
+  }
+]

@@ -1,0 +1,50 @@
+## Default experiment configuration for the Lightweight RL DBaaS study.
+## This file is documentation only -- the actual hyperparameters are stored in
+## the dataclasses defined in src/agents.py and src/environment.py. Modify
+## those dataclasses (or pass overrides) to change behaviour.
+
+workload:
+  n_days_train: 7
+  n_days_eval: 3
+  seed_train: 42
+  seed_eval: 137
+  n_tenants: 8
+  observation_window_minutes: 10
+
+environment:
+  acu_levels:    [0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0]
+  sla_latency_ms: 100.0
+  sla_penalty:    25.0
+  cost_weight:    1.0
+  cold_start_penalty: 10.0
+  qps_per_acu:    50.0
+  cost_per_acu_minute_usd: 0.002
+
+linear_q:
+  alpha: 0.25
+  gamma: 0.9
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_fraction: 0.5
+  bins: 4
+  num_tilings: 3
+
+dqn:
+  hidden: 64
+  lr: 0.001
+  gamma: 0.9
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_fraction: 0.5
+  batch_size: 32
+  buffer_size: 5000
+  target_sync_steps: 200
+
+federated:
+  n_tenants: 4
+  aggregation_period_episodes: 5
+
+training:
+  episodes: 100
+  episode_length_minutes: 720
+  seed: 42
